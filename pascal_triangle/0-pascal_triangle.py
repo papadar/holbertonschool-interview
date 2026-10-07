@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """the pascal triangle documentation"""
 
+
 def pascal_triangle(n):
     """count and list of lists"""
     count = 0
