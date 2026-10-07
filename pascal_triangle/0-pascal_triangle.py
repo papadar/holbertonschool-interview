@@ -4,7 +4,7 @@
 
 def pascal_triangle(n):
     """count and list of lists"""
-    count = 0
+    count = 1
     tri = [[1]]
 
     """edge case - zero returns a zero length list"""
