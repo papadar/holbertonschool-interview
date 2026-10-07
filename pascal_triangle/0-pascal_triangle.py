@@ -1,11 +1,16 @@
 #!/usr/bin/python3
+"""the pascal triangle documentation"""
+
 def pascal_triangle(n):
+    """count and list of lists"""
     count = 0
     tri = [[1]]
 
+    """edge case - zero returns a zero length list"""
     if (n <= 0):
         return []
 
+    """cycle through the count, and build each row one value at a time"""
     while (count < n):
         pre = tri[-1]
         row = [1]
