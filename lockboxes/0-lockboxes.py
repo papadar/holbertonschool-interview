@@ -18,7 +18,7 @@ def canUnlockAll(boxes):
         for i in range(count):
             if boxop[i] == 1:
                 for value in boxes[i]:
-                    if (boxop[value] == 0):
+                    if (value < count) and (boxop[value] == 0):
                         boxop[value] = 1
                         again = True
 
