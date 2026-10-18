@@ -52,14 +52,12 @@ def factfunc(n) -> int:
         return result
 
 
-def minOperations(n):
+def minOperations(n) -> int:
     """minimum operations calculator"""
     if not isinstance(n, int):
-        print("not integer")
         return 0
     if n <= 1:
         return 0
     else:
-        print(f"checking value {n}")
         result = factfunc(n)
         return result
