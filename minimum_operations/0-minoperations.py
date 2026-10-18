@@ -26,25 +26,25 @@ def factfunc(n) -> int:
     check = 0
     limit = math.ceil(n/2)
     factor = False
-    print(f" - - - - - - - - - - - limit for value {n} is {limit}")
+    """ - - - - - - - - - - - limit for value {n} is {limit}"""
     for i in range(2, limit + 1):
         check = int(n/i)
-        print(f"check {i} for {n} = {n/i}")
+        """check {i} for {n} = {n/i}"""
         if n % i == 0:
             factor = True
             result += i
-            print(f" - - - found a factor in {check} result for {n} is now {result}")
-            if is_prime(check):
+            """ - - - found a factor in {check}"""
+            if is_prime(n/i):
                 result += check
-                print(f" - - - found a PRIME factor in {check} result for {n} is now {result}")
+                """ - - - found a PRIME factor in {check}"""
             else:
                 result += factfunc(check)
-                print(f" - - - result for {n} is now {result}")
+                """ - - - result for {n} is now {result}"""
         if factor:
-            print(f"factor was found escape the loop")
+            """factor was found escape the loop"""
             break
     if result == 0:
-        print(f"limit reached, adding {n} itself")
+        """limit reached, adding {n} itself"""
         return n
     else:
         return result
