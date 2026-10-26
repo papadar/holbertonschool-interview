@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""read the log stdout"""
 import sys
 
 count = 0
@@ -8,6 +9,7 @@ names = [200, 301, 400, 401, 403, 404, 405, 500]
 
 
 def code_count(code: int):
+    """count the codes"""
     match code:
         case 200:
             codes[0] += 1
@@ -28,12 +30,14 @@ def code_count(code: int):
 
 
 def print_codes():
+    """print the code tally"""
     for i, value in enumerate(codes):
         if value > 0:
             print(f"{names[i]}: {value}")
 
 
 try:
+    """try to read ther stdout"""
     for line in sys.stdin:
         count += 1
         clean_line = line.rstrip('\r\n')
@@ -46,10 +50,12 @@ try:
         # print(f"{code_item}")
         # print(f"last item = {last_item}")
         if count == 10:
+            """print stats every 10 logs"""
             print(f"File size: {result}")
             print_codes()
             count = 0
 
 except KeyboardInterrupt:
+    """if user quits, print stats"""
     print(f"File size: {result}")
     print_codes()
