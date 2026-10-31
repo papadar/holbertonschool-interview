@@ -3,6 +3,9 @@
 
 
 def validUTF8(data):
-    """check the data for utf8ness"""
-    print(f"true")
-    return True
+    """check the data for utf-8 ness"""
+    try:
+        bytes(data).decode("utf-8")
+        return True
+    except (ValueError, UnicodeDecodeError):
+        return False
