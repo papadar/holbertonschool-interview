@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""validate the utf8"""
+"""validate the utf8 one value at a time"""
 
 
 def validUTF8(data):
