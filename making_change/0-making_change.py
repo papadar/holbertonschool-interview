@@ -21,34 +21,32 @@ def makeChange(coins: list, value) -> int:
 
     if len(coins) < 1:
         return -1
-    
+
     """sort the coins list largest to smallest"""
     scoins = sorted(coins, reverse=True)
     smallest = 0
 
-    #print(scoins)
-
     """try with a single coin ommitted"""
-    for i in range (len(scoins)+1):
+    for i in range(len(scoins)+1):
         count = 0
         check = value
         tscoins = scoins[:i] + scoins[i + 1:]
-        #print(tscoins) 
-        #print(value)
+        # print(tscoins)
+        # print(value)
 
         """check each coin can fit into value"""
         for coin in tscoins:
-            #print(f"coin is {coin} & value remaining is {value}")
+            # print(f"coin is {coin} & value remaining is {value}")
             while coin <= check:
                 count += 1
-                #print(f"count with coins{tscoins} is {count}")
+                # print(f"count with coins{tscoins} is {count}")
                 check = check - coin
                 if check == 0:
                     if smallest == 0 or smallest > count:
-                        smallest = count 
-                        #print("value is zero")
+                        smallest = count
+                        # print("value is zero")
 
     if smallest != 0:
         return smallest
-    
+
     return -1
